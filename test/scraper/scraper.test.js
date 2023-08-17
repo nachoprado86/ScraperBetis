@@ -10,8 +10,8 @@ describe("Scraper", () => {
         await scraper.close();
     });
     it ("should return a string", async () => {
-        let url = "https://www.realbetisbalompie.es/fans_club/"
-        const content = await scraper.scrap(url);
+        let pages = 3;
+        const content = await scraper.multiScrap(pages);
         expect (content).toContain("<title>Peñas Béticas - Real Betis Balompié</title>");
-    }, 30000);
+    }, 300000);
 });

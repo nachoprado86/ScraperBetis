@@ -9,6 +9,14 @@ class Parser {
         return this.dom.window.document.querySelectorAll(".el-info");
         
     }
+
+    getTitle = () => {
+        
+    }
+
+    // .el-name b
+    // "color-main mb10"
+    // 
 }
 
 export default Parser;

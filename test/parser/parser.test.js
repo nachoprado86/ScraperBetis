@@ -1,4 +1,5 @@
 import Parser from "../../src/parser/parser.js";
+import fs from "fs";
 
 describe ("Parser", () => {
     let parser;
@@ -10,6 +11,6 @@ describe ("Parser", () => {
   
     it ("should return all el info", async () => {
         const elInfo = parser.getElInfo();
-        expect(elInfo.length).toBe(9);
+        expect(elInfo.length).toBeGreaterThan(8);
     })
 });

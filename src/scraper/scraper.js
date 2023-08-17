@@ -19,20 +19,23 @@ class Scraper {
         
     }
 
-    scrap = async (query,page) => {
-        this.baseUrl.searchParams.set("page", page);
-        const url = this.baseUrl.toString();
+    scrap = async (page) => {
+        
+        let url = this.baseUrl.toString();
+        url+= `${page}`;
+        console.log(page);
         await this.page.goto(url);
-        await new Promise(resolve => setTimeout(resolve, 15000));
+        await new Promise(resolve => setTimeout(resolve, 1000));
         const content = await this.page.content();
         return content;
     }
 
-    multiScrap = async (query, pages) => {
+    multiScrap = async (pages) => {
         let content = "";
         for (let i = 1; i <= pages; i++) {
-            content += await this.scrap(query,i);
+            content += await this.scrap(i);
         }
+        
         return content;
         
     }
