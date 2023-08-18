@@ -4,6 +4,7 @@ const app = express();
 
 app.get('/', (req, res) => {
     const content = "Hello World";
+    console.log (content);
     res.send(content);
 });
 
