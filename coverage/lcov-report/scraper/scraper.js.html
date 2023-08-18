@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,7 +121,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -131,22 +131,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,7 +166,7 @@ class Scraper {
 &nbsp;
     init = async () =&gt; {
         this.browser = await puppeteer.launch({ headless: this.headless});
-<span class="cstat-no" title="statement not covered" >        this.page = await this.browser.newPage();</span>
+        this.page = await this.browser.newPage();
     }
 &nbsp;
     close = async () =&gt; {
@@ -174,24 +174,24 @@ class Scraper {
         
     }
 &nbsp;
-    scrap = <span class="fstat-no" title="function not covered" >as</span>ync (page) =&gt; {
+    scrap = async (page) =&gt; {
         
-        let url = <span class="cstat-no" title="statement not covered" >this.baseUrl.toString();</span>
-<span class="cstat-no" title="statement not covered" >        url+= `${page}`;</span>
-<span class="cstat-no" title="statement not covered" >        console.log(page);</span>
-<span class="cstat-no" title="statement not covered" >        await this.page.goto(url);</span>
-<span class="cstat-no" title="statement not covered" >        await new Promise(<span class="fstat-no" title="function not covered" >re</span>solve =&gt; <span class="cstat-no" title="statement not covered" >setTimeout(resolve, 1000))</span>;</span>
-        const content = <span class="cstat-no" title="statement not covered" >await this.page.content();</span>
-<span class="cstat-no" title="statement not covered" >        return content;</span>
+        let url = this.baseUrl.toString();
+        url+= `${page}`;
+        console.log(page);
+        await this.page.goto(url);
+        await new Promise(resolve =&gt; setTimeout(resolve, 1000));
+        const content = await this.page.content();
+        return content;
     }
 &nbsp;
-    multiScrap = <span class="fstat-no" title="function not covered" >as</span>ync (pages) =&gt; {
-        let content = <span class="cstat-no" title="statement not covered" >"";</span>
-<span class="cstat-no" title="statement not covered" >        for (let i = <span class="cstat-no" title="statement not covered" >1;</span> i &lt;= pages; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            content += await this.scrap(i);</span>
+    multiScrap = async (pages) =&gt; {
+        let content = "";
+        for (let i = 1; i &lt;= pages; i++) {
+            content += await this.scrap(i);
         }
         
-<span class="cstat-no" title="statement not covered" >        return content;</span>
+        return content;
         
     }
 &nbsp;
@@ -205,7 +205,7 @@ export default Scraper;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-18T09:24:32.079Z
+                at 2023-08-18T09:30:05.079Z
             </div>
         <script src="../prettify.js"></script>
         <script>
