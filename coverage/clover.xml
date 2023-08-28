@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692351005090" clover="3.2.0">
-  <project timestamp="1692351005091" name="All files">
-    <metrics statements="27" coveredstatements="27" conditionals="1" coveredconditionals="0" methods="9" coveredmethods="8" elements="37" coveredelements="35" complexity="0" loc="27" ncloc="27" packages="2" files="2" classes="2"/>
+<coverage generated="1693233541686" clover="3.2.0">
+  <project timestamp="1693233541687" name="All files">
+    <metrics statements="44" coveredstatements="31" conditionals="1" coveredconditionals="0" methods="14" coveredmethods="7" elements="59" coveredelements="38" complexity="0" loc="44" ncloc="44" packages="2" files="2" classes="2"/>
     <package name="parser">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <metrics statements="22" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="1"/>
       <file name="parser.js" path="/home/nachoprado/Escritorio/ScraperBetis/src/parser/parser.js">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <metrics statements="22" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
       </file>
     </package>
     <package name="scraper">

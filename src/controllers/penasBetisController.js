@@ -1,6 +1,6 @@
 import Scraper from "../scraper/scraper.js";
 import Parser from "../parser/parser.js";
-import PenasBetis from "../models/penasBetis.js";
+// import PenasBetis from "../models/penasBetis.js";
 
 
 class PenasBetisController{
@@ -17,15 +17,13 @@ class PenasBetisController{
         const content = await this.scraper.multiScrap(pages);
         this.parser = new Parser(content);
         const cards = this.parser.getCardsArray();
-        this.saveData(cards);
+        // this.saveData(cards);
         this.close();
         return cards;
     }
     saveData = async (cards) => {
         for(let card of cards){
             try{
-                card.shop = "amazon"; 
-                card.query = query; 
                 const producto = new PenasBetis(card);
                 await producto.save();
             }
@@ -43,3 +41,14 @@ class PenasBetisController{
 }
 
 export default PenasBetisController;
+
+
+async function prueba () {
+    const controller = new PenasBetisController();
+await controller.init();
+const cards = await controller.getData(1);
+console.log("resultado:", cards);
+controller.close();
+}
+
+prueba();

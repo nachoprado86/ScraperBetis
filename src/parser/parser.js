@@ -10,17 +10,32 @@ class Parser {
         
     }
     getTitulo= (card) => {
-        return card.querySelector(".el-name b").textContent.trim();
+        try {
+            return card.querySelector(".el-name b").textContent.trim();
+        } catch (e) {
+            return "No tiene título";
+        }
     }
     getCiudad = (card) => {
-        return card.querySelector(".color-main i").textContent.trim();
+        try {
+            return card.querySelector(".color-main i").textContent.trim();
+        } catch (e) {
+            return "No tiene ciudad";
+        }
     }
     getDireccion = (card) => {
-        return card.querySelector(".color-main p").textContent.trim();
+        try {
+            return card.querySelector("p").textContent.trim();
+        } catch (e) {
+            return "No tiene dirección";
+        }
     }
     getTelefono = (card) => {
-        return card.querySelector(".tel").textContent.trim();
-    }
+        try {
+        return card.querySelector("a").textContent.trim();
+    } catch (e) {
+        return "No tiene teléfono";
+    }}
 
     getCard = (card) => {
         return {
